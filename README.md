@@ -4,6 +4,12 @@ Let your **AI agents ask for human reviews** in gotoHuman via MCP.
 Review AI-generated content, approve critical actions or provide input.  
 An async webhook-based workflow for autonomous agents and AI automations.
 
+## Demo
+
+This is Cursor on the left, but this could be a background agent that also reacts to the approval webhook to add an item to your list of newsletter ideas.
+
+https://github.com/user-attachments/assets/380a4223-ea77-4e24-90a5-52669b77f56f
+
 ## Setup
 Get your API key and set up your review forms at [app.gotohuman.com](https://app.gotohuman.com)
 
