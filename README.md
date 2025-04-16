@@ -1,5 +1,7 @@
 # gotoHuman MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@gotohuman/gotohuman-mcp-server)](https://smithery.ai/server/@gotohuman/gotohuman-mcp)
+
 Let your **AI agents ask for human reviews** in gotoHuman via MCP.  
 Review AI-generated content, approve critical actions or provide input.  
 An async webhook-based workflow for autonomous agents and AI automations.
@@ -11,6 +13,15 @@ This is Cursor on the left, but this could be a background agent that also react
 https://github.com/user-attachments/assets/380a4223-ea77-4e24-90a5-52669b77f56f
 
 ## Setup
+
+### Installing via Smithery
+
+To install this MCP server for Cursor or Claude Desktop automatically via [Smithery](https://smithery.ai/server/@gotohuman/gotohuman-mcp):
+
+```bash
+npx -y @smithery/cli install @gotohuman/gotohuman-mcp --client claude
+```
+
 Get your API key and set up your review forms at [app.gotohuman.com](https://app.gotohuman.com)
 
 ```bash
@@ -63,4 +74,3 @@ Request a human review. Will appear in your gotoHuman inbox.
 ```
 > [!NOTE]
 > For Windows, the `args` path needs to be `C:\\<absolute-path>\\build\\index.js`
-
