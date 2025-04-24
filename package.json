@@ -1,12 +1,10 @@
 {
-  "name": "gotohuman-mcp-server",
-  "version": "0.1.0",
+  "name": "@gotohuman/mcp-server",
+  "version": "0.1.2",
   "description": "MCP server for requesting human approvals with gotoHuman",
-  "main": "index.js",
+  "main": "./build/index.js",
   "type": "module",
-  "bin": {
-    "gotohuman-mcp-server": "./build/index.js"
-  },
+  "bin": "./build/index.js",
   "files": [
     "build"
   ],
@@ -18,12 +16,15 @@
   },
   "author": "TillSimon",
   "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.7.0",
+    "gotohuman": "^0.2.8"
+  },
   "devDependencies": {
     "@types/node": "^22.13.4",
     "typescript": "^5.8.2"
   },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.7.0",
-    "gotohuman": "^0.2.8"
+  "publishConfig": {
+    "access": "public"
   }
 }

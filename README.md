@@ -1,22 +1,34 @@
 # gotoHuman MCP Server
 
-Let your **AI agents ask for human reviews** in gotoHuman via MCP.  
-Review AI-generated content, approve critical actions or provide input.  
-An async webhook-based workflow for autonomous agents and AI automations.
+gotoHuman makes it easy to add **human approvals** to AI agents and agentic workflows.  
+A fully-managed async human-in-the-loop workflow with a customizable approval UI.  
+Enjoy built-in auth, webhooks, notifications, team features, and an evolving training dataset.
 
-## Setup
-Get your API key and set up your review forms at [app.gotohuman.com](https://app.gotohuman.com)
+Use our MCP server to request human approvals from your AI workflows via MCP or add it to your IDE to help with integration.
+
+## Installation
+
 
 ```bash
-# Install dependencies
-npm install
-
-# Build the server
-npm run build
-
-# For testing: Run the MCP inspector
-npm run inspector
+npx @gotohuman/mcp-server
 ```
+
+### Use with Cursor / Claude / Windsurf
+
+```json
+{
+  "mcpServers": {
+    "gotoHuman": {
+      "command": "npx",
+      "args": ["-y", "@gotohuman/mcp-server"],
+      "env": {
+        "GOTOHUMAN_API_KEY": "your-api-key"
+      }
+    }
+  }
+}
+```
+Get your API key and set up an approval step at [app.gotohuman.com](https://app.gotohuman.com)
 
 ## Tools
 
@@ -38,9 +50,21 @@ Request a human review. Will appear in your gotoHuman inbox.
     - `assignToUsers`: Optional list of user emails to assign the review to
   - __Returns__ a link to the review in gotoHuman
 
-  ## Use in MCP client
 
-  ### Cursor or Claude
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Build the server
+npm run build
+
+# For testing: Run the MCP inspector
+npm run inspector
+```
+
+  #### Run locally in MCP Client (e.g. Cursor / Claude / Windsurf)
 
   ```json
   {
@@ -57,4 +81,3 @@ Request a human review. Will appear in your gotoHuman inbox.
 ```
 > [!NOTE]
 > For Windows, the `args` path needs to be `C:\\<absolute-path>\\build\\index.js`
-
