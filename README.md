@@ -8,7 +8,6 @@ Use our MCP server to request human approvals from your AI workflows via MCP or 
 
 ## Installation
 
-
 ```bash
 npx @gotohuman/mcp-server
 ```
@@ -29,6 +28,12 @@ npx @gotohuman/mcp-server
 }
 ```
 Get your API key and set up an approval step at [app.gotohuman.com](https://app.gotohuman.com)
+
+## Demo
+
+This is Cursor on the left, but this could be a background agent that also reacts to the approval webhook.
+
+https://github.com/user-attachments/assets/380a4223-ea77-4e24-90a5-52669b77f56f
 
 ## Tools
 
