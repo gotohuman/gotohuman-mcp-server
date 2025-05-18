@@ -18,7 +18,8 @@
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.7.0",
-    "gotohuman": "^0.2.8"
+    "gotohuman": "^0.2.8",
+    "mcp-evals": "^1.0.18"
   },
   "devDependencies": {
     "@types/node": "^22.13.4",

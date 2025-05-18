@@ -86,3 +86,12 @@ npm run inspector
 ```
 > [!NOTE]
 > For Windows, the `args` path needs to be `C:\\<absolute-path>\\build\\index.js`
+
+
+## Running evals
+
+The evals package loads an mcp client that then runs the index.ts file, so there is no need to rebuild between tests. You can load environment variables by prefixing the npx command. Full documentation can be found [here](https://www.mcpevals.io/docs).
+
+```bash
+OPENAI_API_KEY=your-key  npx mcp-eval src/evals/evals.ts src/index.ts
+```
