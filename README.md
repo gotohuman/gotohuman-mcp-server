@@ -27,6 +27,9 @@ npx @gotohuman/mcp-server
   }
 }
 ```
+
+[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=gotoHuman&config=eyJjb21tYW5kIjoibnB4IC15IEBnb3RvaHVtYW4vbWNwLXNlcnZlciIsImVudiI6eyJHT1RPSFVNQU5fQVBJX0tFWSI6InlvdXItYXBpLWtleSJ9fQ==)
+
 Get your API key and set up an approval step at [app.gotohuman.com](https://app.gotohuman.com)
 
 ## Demo
