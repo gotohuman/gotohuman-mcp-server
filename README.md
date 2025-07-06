@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/gotohuman-gotohuman-mcp-server-badge.png)](https://mseep.ai/app/gotohuman-gotohuman-mcp-server)
+
 # gotoHuman MCP Server
 
 gotoHuman makes it easy to add **human approvals** to AI agents and agentic workflows.  
