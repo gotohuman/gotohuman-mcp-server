@@ -41,22 +41,29 @@ https://github.com/user-attachments/assets/380a4223-ea77-4e24-90a5-52669b77f56f
 ## Tools
 
 ### `list-forms`
-List all available review forms.
-  - __Returns__ a list of all available forms in your account incl. high-level info about the added fields
+List all available review templates.
+  - __Returns__ a list of all available review templates in your account incl. high-level info about the added fields
 ### `get-form-schema`  
-Get the schema to use when requesting a human review for a given form.
+Get the schema to use when requesting a human review for a given review template.
   - __Params__
-    - `formId`: The form ID to fetch the schema for
+    - `formId`: The review template ID to fetch the schema for
   - __Returns__ the schema, considering the incl. fields and their configuration
 ### `request-human-review-with-form`  
 Request a human review. Will appear in your gotoHuman inbox.
   - __Params__
-    - `formId`: The form ID for the review
-    - `fieldData`: Content (AI-output to review, context,...) and configuration for the form's fields.  
+    - `formId`: The ID of the review template to use
+    - `fieldData`: Content (AI-output to review, context,...) and configuration for the review template's fields.  
     The schema for this needs to be fetched with `get-form-schema`
-    - `metadata`: Optional additional data that will be incl. in the webhook response after form submission
+    - `config`: Configuration for the review template. Optional. The schema for this needs to be fetched with `get-form-schema`
+    - `title`: Optional title shown in the inbox and notifications
+    - `webhookUrl`: Optional webhook URL for this request (when the review template has no default webhook)
+    - `workflow`: Optional object linking this review to a multi-step agentic workflow:
+      - `runId`: Unique ID for the current workflow run. Use the same `runId` on every review in the same run. If `workflow` is sent without `runId` (even `{}`), or for manual triggers, gotoHuman creates a `runId` and returns it as `workflowRunId` for subsequent requests.
+      - `runName`: Optional display name for the run (can be set or updated on any step)
+      - `prevSteps`: Array of `reviewId`s from previous gotoHuman review steps (omit on the first step)
+    - `metadata`: Optional additional data that will be incl. in the webhook response after review template submission
     - `assignToUsers`: Optional list of user emails to assign the review to
-  - __Returns__ a link to the review in gotoHuman
+  - __Returns__ `reviewId`, `reviewLink`, and optionally `workflowRunId` when gotoHuman assigned a new workflow run
 
 
 ## Development
