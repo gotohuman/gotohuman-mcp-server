@@ -54,9 +54,9 @@ server.tool(
 // Tool for fetching review template field schema
 server.tool(
   "get-form-schema",
-  "Get the partial schema defining the 'fields' property and the optional 'config' property needed when requesting a human review with the given review template.",
+  "Get the partial schema ('fields' and 'config' (optional) properties) to be used when requesting a human review with the given review template.",
   {
-    formId: z.string().describe("The review template ID to fetch the schema for")
+    formId: z.string().describe("The review template ID to fetch the schema information for")
   },
   async ({ formId }) => {
     try {
@@ -69,7 +69,7 @@ server.tool(
           text: JSON.stringify({
             success: true,
             formId: formId,
-            fieldsSchema: formFieldsSchema,
+            schemaInfo: formFieldsSchema,
           })
         }]
       };
