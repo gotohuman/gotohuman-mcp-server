@@ -1,6 +1,6 @@
 {
   "name": "@gotohuman/mcp-server",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "MCP server for requesting human approvals with gotoHuman",
   "main": "./build/index.js",
   "type": "module",
@@ -14,11 +14,11 @@
     "watch": "tsc --watch",
     "inspector": "npx @modelcontextprotocol/inspector build/index.js"
   },
-  "author": "TillSimon",
+  "author": "hello@gotohuman.com",
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.7.0",
-    "gotohuman": "^0.3.3"
+    "gotohuman": "^0.3.5"
   },
   "devDependencies": {
     "@types/node": "^22.13.4",

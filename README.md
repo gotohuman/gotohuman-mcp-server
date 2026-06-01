@@ -88,7 +88,8 @@ npm run inspector
       "command": "node",
       "args": ["/<absolute-path>/build/index.js"],
       "env": {
-        "GOTOHUMAN_API_KEY": "your-api-key"
+        "GOTOHUMAN_API_KEY": "your-api-key",
+        "GOTOHUMAN_AGENT_ID": "your-agent-id"
       }
     }
   }
