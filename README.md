@@ -1,18 +1,26 @@
+<div align="center">
+
+<img src="./img/logo.png" alt="gotoHuman Logo" width="360px"/>
+
+</div>
+
 # gotoHuman MCP Server
 
 gotoHuman makes it easy to add **human approvals** to AI agents and agentic workflows.  
 A fully-managed async human-in-the-loop workflow with a customizable approval UI.  
 Enjoy built-in auth, webhooks, notifications, team features, and an evolving training dataset.
 
-Use our MCP server to request human approvals from your AI workflows via MCP or add it to your IDE to help with integration.
+Use our MCP server to request human approvals from your AI workflows or use it to help with integration.
 
-## Installation
+## Usage
+
+Available on npm as:
 
 ```bash
-npx @gotohuman/mcp-server
+@gotohuman/mcp-server
 ```
 
-### Use with Cursor / Claude / Windsurf
+### Setup in Cursor / Claude / etc.
 
 ```json
 {
@@ -32,38 +40,30 @@ npx @gotohuman/mcp-server
 
 Get your API key and set up an approval step at [app.gotohuman.com](https://app.gotohuman.com)
 
-## Demo
-
-This is Cursor on the left, but this could be a background agent that also reacts to the approval webhook.
-
-https://github.com/user-attachments/assets/380a4223-ea77-4e24-90a5-52669b77f56f
-
 ## Tools
 
 ### `list-forms`
-List all available review templates.
-  - __Returns__ a list of all available review templates in your account incl. high-level info about the added fields
+List all available review types.
+  - __Returns__ a list of all available review types in your account incl. high-level info about the added fields
 ### `get-form-schema`  
-Get the schema to use when requesting a human review for a given review template.
+Get the schema to use when requesting a human review for a given review type.
   - __Params__
-    - `formId`: The review template ID to fetch the schema for
+    - `formId`: The review type ID to fetch the schema for
   - __Returns__ the schema, considering the incl. fields and their configuration
 ### `request-human-review-with-form`  
 Request a human review. Will appear in your gotoHuman inbox.
   - __Params__
-    - `formId`: The ID of the review template to use
-    - `fieldData`: Content (AI-output to review, context,...) and configuration for the review template's fields.  
+    - `formId`: The ID of the review type to use
+    - `fieldData`: Content (AI-output to review, context,...) and configuration for the review type's fields.  
     The schema for this needs to be fetched with `get-form-schema`
-    - `config`: Configuration for the review template. Optional. The schema for this needs to be fetched with `get-form-schema`
+    - `config`: Configuration for the review type. Optional. The schema for this needs to be fetched with `get-form-schema`
     - `title`: Optional title shown in the inbox and notifications
-    - `webhookUrl`: Optional webhook URL for this request (when the review template has no default webhook)
+    - `webhookUrl`: Optional webhook URL for this request (Static URLs can be set on the review type or the agent in gotoHuman)
     - `workflow`: Optional object linking this review to a multi-step agentic workflow:
-      - `runId`: Unique ID for the current workflow run. Use the same `runId` on every review in the same run. If `workflow` is sent without `runId` (even `{}`), or for manual triggers, gotoHuman creates a `runId` and returns it as `workflowRunId` for subsequent requests.
-      - `runName`: Optional display name for the run (can be set or updated on any step)
-      - `prevSteps`: Array of `reviewId`s from previous gotoHuman review steps (omit on the first step)
+      - `runId`: Unique ID for the current workflow run to link multiple steps.
     - `metadata`: Optional additional data that will be incl. in the webhook response after review template submission
     - `assignToUsers`: Optional list of user emails to assign the review to
-  - __Returns__ `reviewId`, `reviewLink`, and optionally `workflowRunId` when gotoHuman assigned a new workflow run
+  - __Returns__ `reviewId` and `reviewLink`
 
 
 ## Development
